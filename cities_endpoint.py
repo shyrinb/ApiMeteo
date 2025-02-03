@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify # type: ignore
 
-cities_bp = Blueprint('cities', __name__)
+cities = Blueprint('cities', __name__)
 
 # Liste des villes fictives (tu peux les modifier)
 cities_data = [
@@ -11,6 +11,6 @@ cities_data = [
     {"name": "Nice", "country": "France", "population": 342637}
 ]
 
-@cities_bp.route('/cities', methods=['GET'])
+@cities.route('/cities', methods=['GET'])
 def get_cities():
     return jsonify(cities_data)
