@@ -8,6 +8,9 @@ Ce projet consiste à créer une API qui consomme une API publique OpenWeatherMa
 - **Langage** : Python (Flask) *(ou tout autre langage choisi par l'équipe)*
 - **Framework** : Flask *(ou tout autre framework choisi par l'équipe)*
 
+## Installer les dependances:
+pip install flask requests
+
 ## Endpoints
 1. **GET /weather** : Renvoie la météo pour une ville donnée.
 2. **GET /news** : Renvoie les dernières nouvelles.
