@@ -7,6 +7,9 @@ from cities_endpoint import cities
 
 app = Flask(__name__)
 
+API_KEY = "ac2e6840732ee6b52640142d835863af"
+OPENWEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
+
 # Registre des endpoints
 app.register_blueprint(weather)
 app.register_blueprint(forecast)
