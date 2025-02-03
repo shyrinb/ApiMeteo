@@ -13,9 +13,11 @@ pip install flask requests
 
 ## Endpoints
 1. **GET /weather** : Renvoie la météo pour une ville donnée.
-2. **GET /news** : Renvoie les dernières nouvelles.
-3. **GET /countries** : Renvoie des informations sur les pays.
-
+2. **GET /air_quality** : Renvoie les nouvelles sur la qualité de l'air.
+3. **GET /cities** : Renvoie des informations sur la liste des villes données.
+4. **GET /forecast** : Renvoie des prévisions meteos.
+5. **GET /current** : Renvoie la méteo actuelle.
+   
 ## Installation
 1. Clonez le dépôt :
    ```bash
