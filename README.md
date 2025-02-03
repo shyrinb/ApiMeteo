@@ -25,7 +25,8 @@ pip install flask requests
   ```
 
 ## Repartition du travail
-  ```bash/weather-api
+  ```bash
+/weather-api
     ├── app.py                   # Fichier principal pour exécuter le serveur Flask
     ├── weather_endpoint.py      # Endpoint pour la météo d'une ville
     ├── forecast_endpoint.py     # Endpoint pour les prévisions météo
