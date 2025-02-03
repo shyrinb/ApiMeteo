@@ -20,34 +20,29 @@ def get_forecast():
     params = {
         "q": city,
         "appid": API_KEY,
-        "units": "metric",  # Température en degrés Celsius
-        "cnt": 5  # Nombre de prévisions (5 jours par défaut)
+        "units": "metric",  # Pour afficher la température en Celsius
+        "lang": "fr"        # Langue des descriptions météo
     }
 
-    try:
-        response = requests.get(BASE_URL, params=params)
-        data = response.json()
+    response = requests.get(BASE_URL, params=params)
 
-        if response.status_code != 200:
-            return jsonify({"error": data.get("message", "Erreur inconnue")}), response.status_code
+    if response.status_code != 200:
+        return jsonify({"error": "Ville introuvable ou problème avec l'API"}), response.status_code
 
-        # Formatage des données
-        forecast_list = []
-        for forecast in data['list']:
-            forecast_list.append({
-                "date": forecast["dt_txt"],
-                "temperature": forecast["main"]["temp"],
-                "description": forecast["weather"][0]["description"],
-                "humidity": forecast["main"]["humidity"],
-                "wind_speed": forecast["wind"]["speed"]
-            })
+    data = response.json()
 
-        return jsonify({
-            "city": data["city"]["name"],
-            "country": data["city"]["country"],
-            "forecasts": forecast_list
+    # Extraire les prévisions météo (ex : pour 5 jours, toutes les 3 heures)
+    forecasts = []
+    for forecast in data["list"]:
+        forecasts.append({
+            "datetime": forecast["dt_txt"],
+            "temperature": forecast["main"]["temp"],
+            "description": forecast["weather"][0]["description"],
+            "humidity": forecast["main"]["humidity"],
+            "wind_speed": forecast["wind"]["speed"]
         })
 
-    except requests.exceptions.RequestException as e:
-        return jsonify({"error": str(e)}), 500
-gi
+    return jsonify({
+        "city": city,
+        "forecasts": forecasts
+    })
