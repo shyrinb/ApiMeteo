@@ -2,10 +2,10 @@ from flask import Blueprint, request, jsonify
 import requests
 import os
 
-# Définir un Blueprint Flask pour ce module
+
 forecast_bp = Blueprint('forecast', __name__)
 
-# Clé API OpenWeatherMap (remplace avec la tienne)
+
 API_KEY = os.getenv("OPENWEATHER_API_KEY", "TA_CLE_API_ICI")
 BASE_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
