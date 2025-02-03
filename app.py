@@ -1,8 +1,8 @@
-from flask import Flask
-from weather_endpoint import weather
-from forecast_endpoint import forecast
-from air_quality_endpoint import air_quality
-from current_weather_endpoint import current_weather
+from flask import Flask # type: ignore
+from weather_endpoint import weather # type: ignore
+from forecast_endpoint import forecast # type: ignore
+from air_quality_endpoint import air_quality # type: ignore
+from current_weather_endpoint import current_weather # type: ignore
 from cities_endpoint import cities
 
 app = Flask(__name__)
