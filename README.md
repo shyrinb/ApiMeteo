@@ -22,12 +22,14 @@ pip install flask requests
 1. Clonez le dépôt :
    ```bash
    git clone https://github.com/VOTRE-UTILISATEUR/nom-du-repository.git
+  ```
 
-#### Repartition du travail
-/weather-api
+## Repartition du travail
+  ```bash/weather-api
     ├── app.py                   # Fichier principal pour exécuter le serveur Flask
     ├── weather_endpoint.py      # Endpoint pour la météo d'une ville
     ├── forecast_endpoint.py     # Endpoint pour les prévisions météo
     ├── air_quality_endpoint.py  # Endpoint pour la qualité de l'air
     ├── current_weather_endpoint.py # Endpoint pour la météo actuelle
     └── cities_endpoint.py       # Endpoint pour la liste des villes disponibles
+  ```
